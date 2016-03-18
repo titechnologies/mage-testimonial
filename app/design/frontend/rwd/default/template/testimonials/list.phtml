@@ -1,0 +1,31 @@
+<?php
+/**
+ * Titech Testimonial Module
+ *
+ * @category    Titech
+ * @package     Titech_Testimonials
+ * @copyright   Copyright (c) 2015 Ti Technologies (http://www.titechnologies.in)
+ * @link        http://www.titechnologies.in
+ */
+ ?>
+<?php $collection = $this->getCollection(); ?>
+<div class="testimonial-title"><h2><?php echo $this->__('Testimonials'); ?></h2></div>
+<div style="text-align:right;">
+	<a title="<?php echo $this->__('Create Testimonial') ?>" href="<?php echo Mage::getUrl('testimonials/index/create'); ?>" ><?php echo $this->__('Create Testimonial') ?></a>
+</div>
+<div id="testimonials-list-container">
+	<ul id="testimonials-list">
+	<?php if(($collection->count() > 0)) { ?>			
+		<?php foreach($collection as $testimonial) { ?>
+			<li>
+				<div style="font-size:16px;text-transform: capitalize;"><strong><?php echo $testimonial->getSubject(); ?></strong><span style="margin-left:20px;font-size:12px;"><?php echo $this->__('Created On') ?>: <?php echo date('d F Y', strtotime($testimonial->getCreatedDate())); ?></span></div>
+				<p><?php echo $testimonial->getDescription(); ?></p>
+				<br/>
+			</li>
+		<?php } ?>
+	<?php } else { ?>
+		<?php echo $this->__('No Testimonials Available') ?>
+	<?php } ?>	
+	</ul>
+	<div><?php echo $this->getPagerHtml(); ?></div>
+</div>

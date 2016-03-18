@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+	<testimonials_adminhtml_index_index>
+		<reference name="content">
+			<block type="testimonials/adminhtml_testimonial" name="testimonial_list" />
+		</reference>
+	</testimonials_adminhtml_index_index>
+    <testimonials_adminhtml_index_grid>
+		<reference name="root">
+			<block type="testimonials/adminhtml_testimonial_grid" name="root" output="toHtml" />
+		</reference>
+   </testimonials_adminhtml_index_grid>
+</layout>

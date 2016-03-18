@@ -1,0 +1,32 @@
+<?php 
+/**
+ * Titech Testimonial Module
+ *
+ * @category    Titech
+ * @package     Titech_Testimonials
+ * @copyright   Copyright (c) 2015 Ti Technologies (http://www.titechnologies.in)
+ * @link        http://www.titechnologies.in
+ */
+?>
+<div>
+	<div class="testimonial-create-title"><h2><?php echo $this->__('Create Testimonial'); ?></h2></div>
+	<form id="create_testimonial_form" action="<?php echo Mage::getUrl('testimonials/index/save'); ?>" method="post">
+		<div>
+			<label for="testimonial_subject"><?php echo $this->__('Subject') ?>: <span class="required"></span></label>
+			<input type="text" name="subject" id="testimonial_subject" value="" class="input-text required-entry" />
+		</div>
+		<br/>
+		<div>
+			<label for="testimonial_description"><?php echo $this->__('Description') ?>: <span class="required"></span></label>
+			<textarea name="description" id="testimonial_description" class="input-text required-entry"></textarea>
+		</div>
+		<div style="text-align:right;">
+			<button class="button" type="submit" name="submit_testimonial" id="submit_testimonial" ><?php echo $this->__('Save') ?></button>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+    //< ![CDATA[
+        var testimonialForm = new VarienForm('create_testimonial_form');
+    //]]>
+</script>

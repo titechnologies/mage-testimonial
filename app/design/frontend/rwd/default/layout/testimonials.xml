@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="top.links">
+			<action method="addLink" translate="label title" module="testimonials">
+				<label>Testimonials</label>
+				<url>testimonials/</url>
+				<title>Testimonials</title>
+				<prepare>true</prepare>
+				<position>999</position>
+			</action>
+		</reference>
+	</default>
+	<testimonials_index_index>
+		<reference name="content">
+			<block type="testimonials/list"  name="testimonials_list" template="testimonials/list.phtml"/>
+		</reference>
+	</testimonials_index_index>
+	<testimonials_index_create>
+		<reference name="content">
+			<block type="core/template"  name="testimonials_create" template="testimonials/create.phtml"/>
+		</reference>
+	</testimonials_index_create>
+</layout>
